@@ -33,7 +33,8 @@ rm *.zip
 # Submit to moss for report; wget report url
 echo "Submitting files to MOSS"
 NAME=`../submit.pl -l java -d ./*/*/*/**.java | tail -n 1`
-wget -r -np $NAME -O $DATE.html
+wget -r -q $NAME -O ../$DATE.html
+echo Saved report to $DATE.html
 
 # Cleanup
-rm -rf ./$DATE
+rm -rf ../$DATE
