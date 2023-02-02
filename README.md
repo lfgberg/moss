@@ -3,7 +3,7 @@
 
 A simple bash script to process canvas submission files of IntelliJ projects and submit them to [Stanford's MOSS](https://theory.stanford.edu/~aiken/moss/) for plagiarism detection. `moss.sh` simply serves as a wrapper which prepares canvas downloads to be submitted to Stanford's perl script (`submit.pl`).
 
-Created for Professor Dan Welch at Penn State University Park while serving as a Learning Assistant for IST242, Intermediate Object Oriented App Development.
+Created while serving as a Learning Assistant for IST242, Intermediate Object Oriented App Development.
 
 
 ## Usage/Examples
