@@ -25,6 +25,10 @@ for x in ./*.zip
 do
     NAME=`basename $x .zip`
     unzip -qq $x -d $NAME
+    cd $NAME
+    find . -mindepth 2 -type f -exec mv -f -- {} . \;
+    find . -depth -mindepth 1 -type d -empty -exec rmdir {} \;
+    cd ..
 done
 
 # Rm each submission zip
@@ -32,7 +36,7 @@ rm *.zip
 
 # Submit to moss for report; wget report url
 echo "Submitting files to MOSS"
-NAME=`../submit.pl -l java -d ./*/*/*/**.java | tail -n 1`
+NAME=`../submit.pl -l java -d ./*/**.java | tail -n 1`
 wget -r -q $NAME -O ../$DATE.html
 echo Saved report to $DATE.html
 
